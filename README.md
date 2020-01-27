@@ -6,7 +6,7 @@ Thanks in advance to Microsoft  for their excellent reference materials which ma
 ## Getting Started
 
 ### Prereqisites
-You must have a RHEL 7.3, 7.4, 7.5, or 7.6 machine with at least 2 GB of memory.(prefereably RHEL 8.x)
+You must have a RHEL 7.3, 7.4, 7.5, or 7.6 machine with at least 2 GB of memory.(We'll be using RHEL 8.x)
 
 To install Red Hat Enterprise Linux on your own machine, go to https://access.redhat.com/products/red-hat-enterprise-linux/evaluation. You can also create RHEL virtual machines in Azure. See Create and Manage Linux VMs with the Azure CLI, and use --image RHEL in the call to az vm create.
 
@@ -24,3 +24,15 @@ sudo curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/c
 
 sudo yum install -y mssql-server
 
+3. After the package installation finishes, run mssql-conf setup and follow the prompts to set the SA password and choose your edition.
+
+sudo /opt/mssql/bin/mssql-conf setup
+
+4. Once the configuration is done, verify that the service is running:
+
+systemctl status mssql-server
+
+5. To allow remote connections, open the SQL Server port on the firewall on RHEL. The default SQL Server port is TCP 1433. If you are using FirewallD for your firewall, you can use the following commands:
+
+sudo firewall-cmd --zone=public --add-port=1433/tcp --permanent
+sudo firewall-cmd --reload
