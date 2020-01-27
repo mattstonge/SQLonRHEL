@@ -35,6 +35,7 @@ systemctl status mssql-server
 5. To allow remote connections, open the SQL Server port on the firewall on RHEL. The default SQL Server port is TCP 1433. If you are using FirewallD for your firewall, you can use the following commands:
 
 sudo firewall-cmd --zone=public --add-port=1433/tcp --permanent
+
 sudo firewall-cmd --reload
 
 
@@ -57,7 +58,9 @@ sudo yum install -y mssql-tools unixODBC-devel
 4. For convenience, add /opt/mssql-tools/bin/ to your PATH environment variable. This enables you to run the tools without specifying the full path. Run the following commands to modify the PATH for both login sessions and interactive/non-login sessions:
 
 echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
+
 echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+
 source ~/.bashrc
 
 
