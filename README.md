@@ -67,6 +67,13 @@ The following steps use sqlcmd to locally connect to your new SQL Server instanc
 
 1. Run sqlcmd with parameters for your SQL Server name (-S), the user name (-U), and the password (-P). In this tutorial, you are connecting locally, so the server name is localhost. The user name is SA and the password is the one you provided for the SA account during setup.
 
-sqlcmd -S localhost -U SA -P '<YourPassword>'
+sqlcmd -S localhost -U SA
+
+2. You should get to a sqlcmd command prompt:
+
+3. If you get a connection failure, first attempt to diagnose the problem from the error message. Then review the connection troubleshooting recommendations.
+
+
+
 
 
