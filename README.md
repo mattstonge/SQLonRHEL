@@ -72,9 +72,7 @@ The following steps use sqlcmd to locally connect to your new SQL Server instanc
 
 sqlcmd -S localhost -U SA
 
-2. You should get to a sqlcmd command prompt:
-
-3. If you get a connection failure, first attempt to diagnose the problem from the error message. Then review the connection troubleshooting recommendations.
+You will be prompted to enter your password. Then you should get to a sqlcmd command prompt.  If you get a connection failure, first attempt to diagnose the problem from the error message. Then review the connection troubleshooting recommendations.
 
 
 
