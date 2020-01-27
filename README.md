@@ -13,3 +13,14 @@ To install Red Hat Enterprise Linux on your own machine, go to https://access.re
 If you have previously installed a CTP or RC release of SQL Server, you must first remove the old repository before following these steps. For more information, see Configure Linux repositories for SQL Server 2017 and 2019.
 
 For other system requirements, see System requirements for SQL Server on Linux.
+
+## Install SQlServer
+
+1. Download the Microsoft SQL Server 2017 Red Hat repository configuration file:
+
+sudo curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/config/rhel/7/mssql-server-2019.repo
+
+2. Run the following commands to install SQL Server:
+
+sudo yum install -y mssql-server
+
