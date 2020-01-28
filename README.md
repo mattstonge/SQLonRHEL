@@ -51,7 +51,9 @@ To install Red Hat Enterprise Linux on your own machine, go to https://access.re
 
 1. Download the Microsoft SQL Server 2017 Red Hat repository configuration file:
 
+---
 sudo curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/config/rhel/7/mssql-server-2019.repo
+---
 
 2. Run the following commands to install SQL Server:
 
