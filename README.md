@@ -33,7 +33,7 @@ LAB ONE
 
 [![screenshot](https://github.com/mattstonge/SQLonRHEL/blob/master/images/def-rhel-8-lab-order.png)
 
-- View the inventory provided to you via email
+- View the inventory provided to you via email (don't loose this - You're going to need it!)
 
 
 We will be using those systems as follows:
