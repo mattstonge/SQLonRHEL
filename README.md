@@ -27,7 +27,7 @@ LAB ONE
 ### Prereqisites
 - Access to [RHPDS](https://rhpds.redhat.com)
 
-[screenshot]()
+[screenshot](https://github.com/mattstonge/SQLonRHEL/blob/master/images/rhpds_login.png)
 
 - Initiate the Definitive RHEL 8 Hands-on Lab (we will be piggy-backing on that deployment)
 
