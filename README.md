@@ -1,3 +1,5 @@
+[![MattTheITGuru](https://avatars0.githubusercontent.com/u/22283700?s=100)](https://MattTheITGuru.com)
+
 # SQLonRHEL
 Workshop for SQL on RHEL 8.x systems
 Thanks in advance to Microsoft  for their excellent reference materials which made this possible
