@@ -8,13 +8,13 @@ Thanks in advance to Microsoft  for their excellent reference materials which ma
 # TABLE OF CONTENTS
 LAB ONE
 
-  [![Getting Started](https://github.com/mattstonge/SQLonRHEL/blob/master/README.md#prereqisites)
+  [Getting Started](https://github.com/mattstonge/SQLonRHEL/blob/master/README.md#prereqisites)
 
-  [![Install SQLServer](https://github.com/mattstonge/SQLonRHEL/blob/master/README.md#install-sqlserver)
+  [Install SQLServer](https://github.com/mattstonge/SQLonRHEL/blob/master/README.md#install-sqlserver)
      
-  [![Install the Commandline Tools](https://github.com/mattstonge/SQLonRHEL#install-the-commandline-tools)
+  [Install the Commandline Tools](https://github.com/mattstonge/SQLonRHEL#install-the-commandline-tools)
   
-  [![Connect to SQLServer](https://github.com/mattstonge/SQLonRHEL#connect-to-your-new-sql-server)
+  [Connect to SQLServer](https://github.com/mattstonge/SQLonRHEL#connect-to-your-new-sql-server)
   
   
      
