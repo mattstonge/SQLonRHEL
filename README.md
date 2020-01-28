@@ -6,9 +6,9 @@ Thanks in advance to Microsoft  for their excellent reference materials which ma
 (https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-red-hat?view=sql-server-2017)
 
 # TABLE OF CONTENTS
-     LAB ONE
-     
-     [![Getting%20Started](https://github.com/mattstonge/SQLonRHEL/blob/master/README.md#prereqisites)
+LAB ONE
+
+  [![Getting%20Started](https://github.com/mattstonge/SQLonRHEL/blob/master/README.md#prereqisites)
      
      Install SQLServer
      
