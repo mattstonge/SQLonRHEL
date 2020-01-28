@@ -27,7 +27,7 @@ If you have previously installed a CTP or RC release of SQL Server, you must fir
 
 For other system requirements, see System requirements for SQL Server on Linux.
 
-## Install SQlServer
+## Install SQLServer
 
 1. Download the Microsoft SQL Server 2017 Red Hat repository configuration file:
 
