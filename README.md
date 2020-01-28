@@ -50,10 +50,13 @@ NODE3 - UNUSED
 ### Please Note
 To install Red Hat Enterprise Linux on your own machine, go to https://access.redhat.com/products/red-hat-enterprise-linux/evaluation. You can also create RHEL virtual machines in Azure. See Create and Manage Linux VMs with the Azure CLI, and use --image RHEL in the call to az vm create.
 
+### Additional Note
+You may need to first SSH to the "workstation" in order to SSH to either NODE1 or NODE2. The workstation was designed to be used as a jump-box...
+
 
 ## Install SQLServer
 
-1. Download the Microsoft SQL Server 2017 Red Hat repository configuration file:
+1. On NODE1 - Download the Microsoft SQL Server 2017 Red Hat repository configuration file:
 
 ---
 sudo curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/config/rhel/7/mssql-server-2019.repo
