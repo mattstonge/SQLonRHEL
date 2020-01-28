@@ -14,6 +14,8 @@ LAB ONE
      
   [![Install the Commandline Tools](https://github.com/mattstonge/SQLonRHEL#install-the-commandline-tools)
   
+  [![Connect to SQLServer](https://github.com/mattstonge/SQLonRHEL#connect-to-your-new-sql-server)
+  
   
      
      
