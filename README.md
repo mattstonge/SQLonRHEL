@@ -3,6 +3,19 @@ Workshop for SQL on RHEL 8.x systems
 Thanks in advance to Microsoft  for their excellent reference materials which made this possible
 (https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-red-hat?view=sql-server-2017)
 
+# TABLE OF CONTENTS
+     LAB ONE
+     
+     Getting Started
+     
+     Install SQLServer
+     
+     Install the Commandline Tools
+     
+     
+
+
+
 ## Getting Started
 
 ### Prereqisites
