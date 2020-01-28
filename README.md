@@ -27,6 +27,8 @@ LAB ONE
 ### Prereqisites
 - Access to [RHPDS](https://rhpds.redhat.com)
 
+[screenshot]()
+
 - Initiate the Definitive RHEL 8 Hands-on Lab (we will be piggy-backing on that deployment)
 
 - View the inventory provided to you via email
