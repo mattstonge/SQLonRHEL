@@ -54,7 +54,7 @@ To install Red Hat Enterprise Linux on your own machine, go to https://access.re
 You may need to first SSH to the "workstation" in order to SSH to either NODE1 or NODE2. The workstation was designed to be used as a jump-box...
 
 
-## Install SQLServer
+## Install SQLServer (on Node1)
 
 1. On NODE1 - Download the Microsoft SQL Server 2017 Red Hat repository configuration file:
 
@@ -86,7 +86,7 @@ sudo firewall-cmd --zone=public --add-port=1433/tcp --permanent
 sudo firewall-cmd --reload
 ---
 
-## Install the Commandline Tools
+## Install the Commandline Tools (on NODE1)
 
 To create a database, you need to connect with a tool that can run Transact-SQL statements on the SQL Server. The following steps install the SQL Server command-line tools: sqlcmd and bcp.
 
@@ -118,7 +118,7 @@ echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 source ~/.bashrc
 ---
 
-## Connect To Your New SQL Server
+## Connect To Your New SQL Server (on NODE1)
 
 The following steps use sqlcmd to locally connect to your new SQL Server instance.
 
