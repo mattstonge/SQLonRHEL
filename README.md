@@ -25,7 +25,7 @@ LAB ONE
 ## Getting Started
 
 ### Prereqisites
-- Access to [![RHPDS](https://rhpds.redhat.com)
+- Access to [RHPDS](https://rhpds.redhat.com)
 
 - Initiate the Definitieve RHEL 8 Hands-on Lab (we will be piggy-backing on that deployment)
 
