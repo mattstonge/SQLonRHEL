@@ -8,7 +8,7 @@ Thanks in advance to Microsoft  for their excellent reference materials which ma
 # TABLE OF CONTENTS
      LAB ONE
      
-     Getting Started(https://github.com/mattstonge/SQLonRHEL/blob/master/README.md#prereqisites)
+     [![Getting Started](https://github.com/mattstonge/SQLonRHEL/blob/master/README.md#prereqisites)
      
      Install SQLServer
      
