@@ -6,7 +6,15 @@ Thanks in advance to Microsoft  for their excellent reference materials which ma
 ## Getting Started
 
 ### Prereqisites
-You must have a RHEL 7.3, 7.4, 7.5, or 7.6 machine with at least 2 GB of memory.(We'll be using RHEL 8.x)
+- Access to RHPDS
+- Initiate the Definitieve RHEL 8 Hands-on Lab (we will be piggy-backing on that deployment)
+- View the inventory provided to you via email
+We will be using those systems as follows:
+Workstation - self explanatory
+NODE1 - this is where we will install SQL first
+NODE2 - this will be used when we do clustering
+NODE3 - UNUSED 
+
 
 To install Red Hat Enterprise Linux on your own machine, go to https://access.redhat.com/products/red-hat-enterprise-linux/evaluation. You can also create RHEL virtual machines in Azure. See Create and Manage Linux VMs with the Azure CLI, and use --image RHEL in the call to az vm create.
 
