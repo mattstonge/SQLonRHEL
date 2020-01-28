@@ -10,9 +10,11 @@ LAB ONE
 
   [![Getting Started](https://github.com/mattstonge/SQLonRHEL/blob/master/README.md#prereqisites)
 
-  [![Install SQLServer](https://github.com/mattstonge/SQLonRHEL/blob/master/README.md#prereqisites)
+  [![Install SQLServer](https://github.com/mattstonge/SQLonRHEL/blob/master/README.md#install-sqlserver)
      
-     Install the Commandline Tools
+  [![Install the Commandline Tools](https://github.com/mattstonge/SQLonRHEL#install-the-commandline-tools)
+  
+  
      
      
 
