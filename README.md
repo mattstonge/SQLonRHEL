@@ -75,7 +75,7 @@ ssh student@node1
 ---
 
 
-
+[![screenshot](https://github.com/mattstonge/SQLonRHEL/blob/master/images/ssh-workstation-node1.png)
 
 
 
