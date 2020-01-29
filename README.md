@@ -54,13 +54,16 @@ However, if you have no access to RHPDS or the workshop environment, you may ins
 
 ### Accessing the Lab Environment
 Review your environment information.
-You will need to SSH from your laptop to the WORKSTATION then to NODE1 so we can begin work.
+You will need to SSH from your laptop to the WORKSTATION then to NODE1 so we can begin work. (you'll be promted for the password)
+
 
 ---
 ssh student@<workstation External Hostname> 
 ---
 ssh student@node1
 ---
+
+
 
 
 ## Install SQLServer (on Node1)
