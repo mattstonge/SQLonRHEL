@@ -195,7 +195,33 @@ sqlcmd -S localhost -U SA -P r3dh4t1!
      NOTE: If you omit "-P r3dh4t1!" it will prompt you for the password...
 
 
+---
+
+2. Create a Test DB and a Table 
+
+
+  NOTE: You'll notice the prompt will change whilst within the sqlcmd shell.
+  To exit the sqlcmd environment use the EXIT command and hit enter...
+
 
 ---
+
+1> CREATE DATABASE TestDB
+
+2> SELECT Name from sys.Databases
+
+3> GO
+
+---
+
+2. Create a Test DB and a Table 
+
+---
+
+1> CREATE DATABASE TestDB
+
+2> SELECT Name from sys.Databases
+
+3> GO
 
 
