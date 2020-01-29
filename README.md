@@ -105,7 +105,7 @@ sudo rpm -Uvh --nodeps mssql-server*rpm
 
 
 
-[![Screenshot](https://github.com/mattstonge/SQLonRHEL/blob/master/images/)
+[![Screenshot](https://github.com/mattstonge/SQLonRHEL/blob/master/images/packages-installed.png)
 
 
 3. After the package installation finishes, run mssql-conf setup and follow the prompts to set the SA password and choose your edition.
