@@ -59,6 +59,7 @@ You will need to SSH from your laptop to the WORKSTATION then to NODE1 so we can
 
 
 ---
+
 ssh student@"<workstation_External_Hostname>" 
 
 ssh student@node1
@@ -75,7 +76,14 @@ ssh student@node1
 1. On NODE1 - Download the Microsoft SQL Server 2017 Red Hat repository configuration file:
 
 ---
-sudo curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/config/rhel/7/mssql-server-2019.repo
+
+sudo yum -y install python2
+
+sudo yum -y install compat-openssl10
+
+sudo curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/config/rhel/8/mssql-server-2019.repo
+
+sudo yum download mssql-server
 
 ---
 
@@ -83,7 +91,15 @@ sudo curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/c
 
 ---
 
-sudo yum install -y mssql-server
+sudo rpm -Uvh --nodeps mssql-server*rpm
+
+sudo /opt/mssql/bin/mssql-conf setup
+
+     When prompted:
+     * Select 2 - Developer Edition
+     * Accept (YES) the license agreements
+     * DB password = r3dh4t1! 
+
 
 ---
 
