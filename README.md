@@ -59,7 +59,7 @@ You will need to SSH from your laptop to the WORKSTATION then to NODE1 so we can
 
 ---
   ssh student@<workstation External Hostname> 
----
+
   
 ---
   ssh student@node1
