@@ -120,6 +120,14 @@ sudo /opt/mssql/bin/mssql-conf setup
      * DB password = r3dh4t1!
 
 
+[![Screenshot](https://github.com/mattstonge/SQLonRHEL/blob/master/images/mssql-conf1.png)
+
+[![Screenshot](https://github.com/mattstonge/SQLonRHEL/blob/master/images/mssql-conf2.png)
+
+[![Screenshot](https://github.com/mattstonge/SQLonRHEL/blob/master/images/mssql-conf3.png)
+
+
+
 ---
 
 4. Once the configuration is done, verify that the service is running:
