@@ -233,8 +233,10 @@ sqlcmd -S localhost -U SA -P r3dh4t1!
 ---
 
 1> CREATE TABLE Inventory (id INT, name NVARCHAR(50), quantity INT)
-   2> INSERT INTO Inventory VALUES (1, 'banana', 150); INSERT INTO Inventory VALUES (2, 'orange', 154);
-   3> GO
+
+2> INSERT INTO Inventory VALUES (1, 'banana', 150); INSERT INTO Inventory VALUES (2, 'orange', 154);
+
+3> GO
 
 ---
 
@@ -243,6 +245,7 @@ sqlcmd -S localhost -U SA -P r3dh4t1!
 ---
 
 1> SELECT * FROM Inventory WHERE quantity > 152;
+
 2> GO
 
 
