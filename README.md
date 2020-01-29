@@ -214,7 +214,7 @@ sqlcmd -S localhost -U SA -P r3dh4t1!
 
 ---
 
-2. Create a Test DB and a Table 
+2. Create a Test DB  
 
 ---
 
@@ -223,5 +223,39 @@ sqlcmd -S localhost -U SA -P r3dh4t1!
 2> SELECT Name from sys.Databases
 
 3> GO
+
+
+
+---
+
+3. Create a Table with some test data
+
+---
+
+1> CREATE TABLE Inventory (id INT, name NVARCHAR(50), quantity INT)
+   2> INSERT INTO Inventory VALUES (1, 'banana', 150); INSERT INTO Inventory VALUES (2, 'orange', 154);
+   3> GO
+
+---
+
+4.  Create a test query - Select Data
+
+---
+
+1> SELECT * FROM Inventory WHERE quantity > 152;
+2> GO
+
+
+---
+
+5> Exit the DB (and the sqlcmd environment)
+
+---
+
+1> QUIT
+
+
+
+# END OF LAB ONE
 
 
