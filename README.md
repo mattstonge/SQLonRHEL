@@ -251,7 +251,7 @@ sqlcmd -S localhost -U SA -P r3dh4t1!
 
 ---
 
-5> Exit the DB (and the sqlcmd environment)
+5. Exit the DB (and the sqlcmd environment)
 
 ---
 
