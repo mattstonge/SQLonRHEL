@@ -81,6 +81,7 @@ sudo curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/c
 2. Run the following commands to install SQL Server:
 
 ---
+
 sudo yum install -y mssql-server
 
 ---
@@ -88,12 +89,19 @@ sudo yum install -y mssql-server
 3. After the package installation finishes, run mssql-conf setup and follow the prompts to set the SA password and choose your edition.
 
 ---
+
 sudo /opt/mssql/bin/mssql-conf setup
+
 ---
 
 4. Once the configuration is done, verify that the service is running:
 
+---
+
 systemctl status mssql-server
+
+---
+
 
 5. To allow remote connections, open the SQL Server port on the firewall on RHEL. The default SQL Server port is TCP 1433. If you are using FirewallD for your firewall, you can use the following commands:
 
