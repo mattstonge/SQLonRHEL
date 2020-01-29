@@ -75,12 +75,14 @@ ssh student@node1
 
 ---
 sudo curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/config/rhel/7/mssql-server-2019.repo
+
 ---
 
 2. Run the following commands to install SQL Server:
 
 ---
 sudo yum install -y mssql-server
+
 ---
 
 3. After the package installation finishes, run mssql-conf setup and follow the prompts to set the SA password and choose your edition.
@@ -97,8 +99,10 @@ systemctl status mssql-server
 
 ---
 sudo firewall-cmd --zone=public --add-port=1433/tcp --permanent
----
+
+
 sudo firewall-cmd --reload
+
 ---
 
 ## Install the Commandline Tools (on NODE1)
@@ -108,29 +112,37 @@ To create a database, you need to connect with a tool that can run Transact-SQL 
 1. Download the Microsoft Red Hat repository configuration file.
 
 ---
+
 sudo curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/7/prod.repo
+
 ---
 
 2. If you had a previous version of mssql-tools installed, remove any older unixODBC packages.
 
 ---
+
 sudo yum remove unixODBC-utf16 unixODBC-utf16-devel
+
 ---
 
 3. Run the following commands to install mssql-tools with the unixODBC developer package.
 
 ---
+
 sudo yum install -y mssql-tools unixODBC-devel
+
 ---
 
 4. For convenience, add /opt/mssql-tools/bin/ to your PATH environment variable. This enables you to run the tools without specifying the full path. Run the following commands to modify the PATH for both login sessions and interactive/non-login sessions:
 
 ---
+
 echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
----
+
 echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
----
+
 source ~/.bashrc
+
 ---
 
 ## Connect To Your New SQL Server (on NODE1)
@@ -140,7 +152,9 @@ The following steps use sqlcmd to locally connect to your new SQL Server instanc
 1. Run sqlcmd with parameters for your SQL Server name (-S), the user name (-U), and the password (-P). In this tutorial, you are connecting locally, so the server name is localhost. The user name is SA and the password is the one you provided for the SA account during setup.
 
 ---
+
 sqlcmd -S localhost -U SA
+
 ---
 
 You will be prompted to enter your password. Then you should get to a sqlcmd command prompt.  If you get a connection failure, first attempt to diagnose the problem from the error message. Then review the connection troubleshooting recommendations.
