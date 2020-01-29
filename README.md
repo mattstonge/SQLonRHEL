@@ -48,10 +48,19 @@ NODE3 - UNUSED
 
 
 ### Please Note
-To install Red Hat Enterprise Linux on your own machine, go to https://access.redhat.com/products/red-hat-enterprise-linux/evaluation. You can also create RHEL virtual machines in Azure. See Create and Manage Linux VMs with the Azure CLI, and use --image RHEL in the call to az vm create.
+IF YOU ARE ATTENDING A HOSTED WORKSHOP - the RHPDS provisioning has been done for you... Please make note of your systems and login credentials and move on to the Install section...
 
-### Additional Note
-You may need to first SSH to the "workstation" in order to SSH to either NODE1 or NODE2. The workstation was designed to be used as a jump-box...
+However, if you have no access to RHPDS or the workshop environment, you may install Red Hat Enterprise Linux on your own machine, go to https://access.redhat.com/products/red-hat-enterprise-linux/evaluation. You can also create RHEL virtual machines in Azure. See Create and Manage Linux VMs with the Azure CLI, and use --image RHEL in the call to az vm create.
+
+### Accessing the Lab Environment
+Review your environment information.
+You will need to SSH from your laptop to the WORKSTATION then to NODE1 so we can begin work.
+
+---
+ssh student@<workstation External Hostname> 
+---
+ssh student@node1
+---
 
 
 ## Install SQLServer (on Node1)
