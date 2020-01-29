@@ -16,10 +16,18 @@ LAB ONE
   [Install the Commandline Tools](https://github.com/mattstonge/SQLonRHEL#install-the-commandline-tools)
   
   [Connect to SQLServer](https://github.com/mattstonge/SQLonRHEL#connect-to-your-new-sql-server)
-  
-  
-     
-     
+
+
+LAB TWO
+
+  [Exercises](https://github.com/mattstonge/SQLonRHEL/blob/master/LABTWO.md) 
+
+LAB THREE
+
+  [EXERCISES](https://github.com/mattstonge/SQLonRHEL/blob/master/LABTHREE.md)
+
+
+Session Presentation Slides
 
 
 
@@ -136,7 +144,7 @@ To create a database, you need to connect with a tool that can run Transact-SQL 
 
 ---
 
-sudo curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/7/prod.repo
+sudo curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/8/prod.repo
 
 ---
 
@@ -153,6 +161,11 @@ sudo yum remove unixODBC-utf16 unixODBC-utf16-devel
 ---
 
 sudo yum install -y mssql-tools unixODBC-devel
+
+
+     When prompted:
+     * Accept (YES) for license agreement
+
 
 ---
 
@@ -176,13 +189,13 @@ The following steps use sqlcmd to locally connect to your new SQL Server instanc
 
 ---
 
-sqlcmd -S localhost -U SA
+sqlcmd -S localhost -U SA -P r3dh4t1!
+
+
+     NOTE: If you omit "-P r3dh4t1!" it will prompt you for the password...
+
+
 
 ---
-
-You will be prompted to enter your password. Then you should get to a sqlcmd command prompt.  If you get a connection failure, first attempt to diagnose the problem from the error message. Then review the connection troubleshooting recommendations.
-
-
-
 
 
