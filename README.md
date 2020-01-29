@@ -93,14 +93,6 @@ sudo yum download mssql-server
 
 sudo rpm -Uvh --nodeps mssql-server*rpm
 
-sudo /opt/mssql/bin/mssql-conf setup
-
-     When prompted:
-     * Select 2 - Developer Edition
-     * Accept (YES) the license agreements
-     * DB password = r3dh4t1! 
-
-
 ---
 
 3. After the package installation finishes, run mssql-conf setup and follow the prompts to set the SA password and choose your edition.
@@ -108,6 +100,12 @@ sudo /opt/mssql/bin/mssql-conf setup
 ---
 
 sudo /opt/mssql/bin/mssql-conf setup
+
+     When prompted:
+     * Select 2 - Developer Edition
+     * Accept (YES) the license agreements
+     * DB password = r3dh4t1!
+
 
 ---
 
