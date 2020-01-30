@@ -7,7 +7,7 @@ Thanks in advance to Microsoft  for their excellent reference materials which ma
 (https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-red-hat?view=sql-server-2017)
 
 # TABLE OF CONTENTS
-LAB ONE
+LAB ONE - Introducing MS SQL Server
 
   [Getting Started](https://github.com/mattstonge/SQLonRHEL/blob/master/README.md#prereqisites)
 
@@ -18,11 +18,11 @@ LAB ONE
   [Connect to SQLServer](https://github.com/mattstonge/SQLonRHEL#connect-to-your-new-sql-server)
 
 
-LAB TWO
+LAB TWO  - Importing/Recovery of a Database
 
   [Exercises](https://github.com/mattstonge/SQLonRHEL/blob/master/LABTWO.md) 
 
-LAB THREE
+LAB THREE  - Security / Best Practices
 
   [EXERCISES](https://github.com/mattstonge/SQLonRHEL/blob/master/LABTHREE.md)
 
