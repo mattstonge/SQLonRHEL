@@ -210,23 +210,6 @@ sqlcmd -S localhost -U SA -P r3dh4t1!
 
 ---
 
-2. Create a Test DB and a Table 
-
-
-  NOTE: You'll notice the prompt will change whilst within the sqlcmd shell.
-  To exit the sqlcmd environment use the EXIT command and hit enter...
-
-
----
-
-1> CREATE DATABASE TestDB
-
-2> SELECT Name from sys.Databases
-
-3> GO
-
----
-
 2. Create a Test DB  
 
 ---
@@ -237,6 +220,9 @@ sqlcmd -S localhost -U SA -P r3dh4t1!
 
 3> GO
 
+
+
+[![Screenshot](https://github.com/mattstonge/SQLonRHEL/blob/master/images/DB-create.png)
 
 
 ---
@@ -251,6 +237,11 @@ sqlcmd -S localhost -U SA -P r3dh4t1!
 
 3> GO
 
+
+
+[![Screenshot](https://github.com/mattstonge/SQLonRHEL/blob/master/images/table-create.png)
+
+
 ---
 
 4.  Create a test query - Select Data
@@ -260,6 +251,9 @@ sqlcmd -S localhost -U SA -P r3dh4t1!
 1> SELECT * FROM Inventory WHERE quantity > 152;
 
 2> GO
+
+
+[![Screenshot](https://github.com/mattstonge/SQLonRHEL/blob/master/images/test-query.png)
 
 
 ---
