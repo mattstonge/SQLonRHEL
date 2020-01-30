@@ -44,7 +44,6 @@ SSH student@workstation
 
 SSH to NODE1
 
-cd /var/opt/mssql
 
 sudo curl -Lo /var/opt/mssql/AdventureWorks2014.bak https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2014.bak
 
