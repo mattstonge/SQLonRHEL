@@ -76,6 +76,10 @@ sqlcmd -S localhost -U SA -P r3dh4t1!
 5>  GO
 
 
+
+[![Screenshot](https://github.com/mattstonge/SQLonRHEL/blob/master/images/DB-restored.png)
+
+
 ---
 
 ## Exercise 3.  Use the restored DB
@@ -85,6 +89,10 @@ sqlcmd -S localhost -U SA -P r3dh4t1!
 1>  SELECT Name FROM sys.Databases
 
 2>  GO
+
+
+
+[![Screenshot](https://github.com/mattstonge/SQLonRHEL/blob/master/images/use-restored-db.png)
 
 
 ---
@@ -99,6 +107,9 @@ sqlcmd -S localhost -U SA -P r3dh4t1!
 
 3>  GO
 
+
+
+[![Screenshot](https://github.com/mattstonge/SQLonRHEL/blob/master/images/query-restored-db.png)
 
 ----
 # END OF LAB 2
