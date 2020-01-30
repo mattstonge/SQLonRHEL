@@ -61,9 +61,9 @@ sqlcmd -S localhost -U SA -P r3dh4t1!
 
 2> GO
 
-  NOTE: In the output you will ses two files.
-  AdventureWorks2014_Data
-  AdventureWorks2014_Log
+     NOTE: In the output you will ses two files.
+     AdventureWorks2014_Data
+     AdventureWorks2014_Log
 
 1>  RESTORE DATABASE AdventureWorks2014
 
