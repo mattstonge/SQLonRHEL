@@ -33,4 +33,74 @@ Session Presentation Slides
 
 # LAB TWO EXERCISES
 
+---
+
+## Exercise 1. Secure the backup (example database)
+
+---
+
+SSH student@workstation
+
+SSH to NODE1
+
+cd /var/opt/mssql
+
+sudo curl -Lo /var/opt/mssql/AdventureWorks2014.bak https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2014.bak
+
+
+
+---
+
+## Exercise 2. Recover the Example DB via the Commanand Line Tools
+
+---
+
+sqlcmd -S localhost -U SA -P r3dh4t1!
+
+1> RESTORE FILELISTONLY FROM DISK = '/var/opt/mssql/AdventureWorks2014.bak'
+
+2> GO
+
+  NOTE: In the output you will ses two files.
+  AdventureWorks2014_Data
+  AdventureWorks2014_Log
+
+1>  RESTORE DATABASE AdventureWorks2014
+
+2>  FROM DISK = '/var/opt/mssql/AdventureWorks2014.bak'
+
+3>  WITH MOVE 'AdventureWorks2014_Data' TO '/var/opt/mssql/data/AdventureWorks2014_Data.ndf',
+
+4>  MOVE 'AdventureWorks2014_Log' TO '/var/opt/mssql/data/AdventureWorks2014_Log.ldf'
+
+5>  GO
+
+
+---
+
+## Exercise 3.  Use the restored DB
+
+---
+
+1>  SELECT Name FROM sys.Databases
+
+2>  GO
+
+
+---
+
+## Exercise 4.  Run some example queries
+
+---
+
+1>  SELECT COUNT(*) FROM AdventureWorks2014.HumanResources.Employee WHERE JobTitle = 'Sales Representative'
+
+2>  SELECT COUNT(*) FROM AdventureWorks2014.HumanResources.Employee WHERE JobTitle = 'Database Administrator'
+
+3>  GO
+
+
+----
+# END OF LAB 2
+
 
