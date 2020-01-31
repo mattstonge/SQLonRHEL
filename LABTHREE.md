@@ -475,22 +475,59 @@ The following example creates a certificate, and then creates a backup protected
 ---
 
 
+1>  USE master
+
+2>  GO
+
+---
+
+1>  CREATE CERTIFICATE BackupEncryptCert
+
+2>  WITH SUBJECT = 'Database backups';
+
+3>  GO
+
+
+---
+
+1>  BACKUP DATABASE [AdventureWorks2014]
+
+2>  TO DISK = N'/var/opt/mssql/backups/AdventureWorks2014.bak'
+
+3>  WITH
+
+4>  COMPRESSION,
+
+5>  ENCRYPTION
+
+6>  ( 
+
+7>  ALGORITHM = AES_256,
+
+8>  SERVER CERTIFICATE = BackupEncryptCert
+
+9>  ),
+
+10>  STATS = 10
+
+11>  GO
+
+
+---
+
+Verify the backup completed successfully...
+
+---
+
+1>  QUIT
+
+
+ls -l /var/opt/mssql/backups/
 
 
 
+----
 
+# SQL on RHEL Lab Completed!
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+---
