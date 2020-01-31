@@ -284,7 +284,121 @@ Alter the security policy to disable the policy.  Now both users can access all 
 
 ---
 
-#[Dynamic Data Masking](../relational-databases/security/dynamic-data-masking.md) enables you to limit the exposure of sensitive data to users of an application by fully or partially masking certain columns. 
+Dynamic Data Masking enables you to limit the exposure of sensitive data to users of an application by fully or partially masking certain columns. 
+
+Create a new user `TestUser` with `SELECT` permission on the table, then execute a query as `TestUser` to view the email data:
+
+---
+
+1>  CREATE USER TestUser WITHOUT LOGIN;
+
+2>  GRANT SELECT ON Person.EmailAddress TO TestUser;
+
+3>  GO
+
+
+---
+
+1>  USE AdventureWorks2014;
+
+2>  GO
+
+
+---
+
+1>  EXECUTE AS USER = 'TestUser';
+
+2>  SELECT TOP 20 EmailAddressID, EmailAddress FROM Person.EmailAddress;
+
+3>  REVERT; 
+
+4>  GO 
+
+---
+
+Use an `ALTER TABLE` statement to add a masking function to the `EmailAddress` column in the `Person.EmailAddress` table:
+
+---
+
+
+1>  ALTER TABLE Person.EmailAddress
+
+2>  ALTER COLUMN EmailAddress
+
+3>  ADD MASKED WITH (FUNCTION = 'email()');
+
+4>  GO
+
+
+---
+
+Now, let's execute the previous query as 'TestUser' to view the masked data
+
+---
+
+
+1>  EXECUTE AS USER = 'TestUser';
+
+2>  SELECT TOP 20 EmailAddressID, EmailAddress FROM Person.EmailAddress;
+
+3>  REVERT;
+
+4>  GO
+
+---
+
+Verify that the masking function changes the email address in the first record from:
+  
+|EmailAddressID |EmailAddress |  
+|----|---- |   
+|1 |ken0@adventure-works.com |    
+ 
+into 
+
+|EmailAddressID |EmailAddress |  
+|----|---- |   
+|1 |kXXX@XXXX.com |   
+
+---
+
+---
+
+## Exercise 5. Enable Transparent Data Encryption
+
+---
+
+One threat to your database is the risk that someone will steal the database files off of your hard-drive. This could happen with an intrusion that gets elevated access to your system, through the actions of a problem employee, or by theft of the computer containing the files (such as a laptop).
+
+Transparent Data Encryption (TDE) encrypts the data files as they are stored on the hard drive. The master database of the SQL Server database engine has the encryption key, so that the database engine can manipulate the data. The database files cannot be read without access to the key. #High-level administrators can manage, backup, and recreate the key, so the database can be moved, but only by selected people. When TDE is configured, the `tempdb` database is also automatically encrypted. 
+
+Since the Database Engine can read the data, Transparent Data Encryption does not protect against unauthorized access by administrators of the computer who can directly read memory, or access SQL Server through an administrator account.
+
+---
+
+### Configure TDE
+
+- Create a master key
+
+- Create or obtain a certificate protected by the master key
+
+- Create a database encryption key and protect it by the certificate
+
+- Set the database to use encryption
+
+
+Configuring TDE requires `CONTROL` permission on the master database and `CONTROL` permission on the user database. Typically an administrator configures TDE. 
+
+
+The following example illustrates encrypting and decrypting the `AdventureWorks2014` database using a certificate installed on the server named `MyServerCert`.
+
+---
+
+
+
+
+
+
+
 
 
 
