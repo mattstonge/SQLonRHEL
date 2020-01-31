@@ -33,7 +33,7 @@ Session Presentation Slides
 
 ---
 
-##1. Create a login and database user
+## 1. Create a login and database user
 
 ---
 
@@ -109,4 +109,38 @@ Now the login student can create more logins, and the user Jerry can create more
 ## 2. Granting Access with Least Priveleges
 
 ---
+
+The first people to connect to a user-database will be the administrator and database owner accounts. However these users have all the permissions available on the database. This is more permission than most users should have.
+When you are just getting started, you can assign some general categories of permissions by using the built-in fixed database roles. For example, the db_datareader fixed database role can read all tables in the database, but make no changes. Grant membership in a fixed database role by using the ALTER ROLE statement. The following example will add the user Jerry to the db_datareader fixed database role.
+
+
+
+sqlcmd -S localhost -U SA -P r3dh4t1!
+
+1>  USE AdventureWorks2014;
+
+2>  GO
+
+1>  ALTER ROLE db_datareader ADD MEMBER Jerry;
+
+2>  GO
+
+
+Later, when you are ready to configure more precise access to your data (highly recommended), create your own user-defined database roles using CREATE ROLE statement. Then assign specific granular permissions to you custom roles.
+
+For example, the following statements create a database role named Sales, grants the Sales group the ability to see, update, and delete rows from the Orders table, and then adds the user Jerry to the Sales role.
+
+
+1>  CREATE ROLE Sales
+
+2>  GRANT SELECT ON Production.WorkOrder TO Sales
+
+3>  GRANT UPDATE ON Production.WorkOrder TO Sales
+
+4>  GRANT DELETE ON Production.WorkOrder TO Sales
+
+5>  ALTER ROLE Sales ADD MEMBER Jerry
+
+6>  GO
+
 
