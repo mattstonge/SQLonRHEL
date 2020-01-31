@@ -393,6 +393,88 @@ The following example illustrates encrypting and decrypting the `AdventureWorks2
 
 ---
 
+1> USE master;
+
+2>  GO
+
+---
+
+
+1>  CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'r3dh4t1!';
+
+2>  GO
+
+
+---
+
+
+1> CREATE CERTIFICATE MyServerCert WITH SUBJECT = 'My Database Encryption Key Certificate';
+
+2>  GO
+
+
+---
+
+
+1>  USE AdventureWorks2014;
+
+2>  GO
+
+
+---
+
+
+1>  CREATE DATABASE ENCRYPTION KEY
+
+2>  WITH ALGORITHM = AES_256 
+
+3>  ENCRYPTION BY SERVER CERTIFICATE MyServerCert;
+
+4>  GO
+
+
+---
+
+
+1>  ALTER DATABASE AdventureWorks2014 
+
+2>  SET ENCRYPTION ON;
+
+3>  GO
+
+
+---
+
+### Romoving TDE
+
+---
+
+1>  ALTER DATABASE AdventureWorks2014
+
+2>  SET ENCRYPTION OFF
+
+3>  GO
+
+
+---
+
+## Exercise 7. Configure Backup Encrytion
+
+---
+
+The encryption and decryption operations are scheduled on background threads by SQL Server. You can view the status of these operations using the catalog views and dynamic management views in the list that appears later in this topic.   
+
+Backup files of databases that have TDE enabled are also encrypted by using the database encryption key. As a result, when you restore these backups, the certificate protecting the database encryption key must be available. This means that in addition to backing up the database, you have to make sure that you maintain backups of the server certificates to prevent data loss. Data loss will result if the certificate is no longer available. For more information,  
+
+SQL Server has the ability to encrypt the data while creating a backup. By specifying the encryption algorithm and the encryptor (a certificate or asymmetric key) when creating a backup, you can create an encrypted backup file.
+
+It is very important to back up the certificate or asymmetric key, and preferably to a different location than the backup file it was used to encrypt. Without the certificate or asymmetric key, you cannot restore the backup, rendering the backup file unusable. 
+ 
+The following example creates a certificate, and then creates a backup protected by the certificate.
+
+---
+
+
 
 
 
