@@ -130,6 +130,7 @@ Later, when you are ready to configure more precise access to your data (highly 
 
 For example, the following statements create a database role named Sales, grants the Sales group the ability to see, update, and delete rows from the Orders table, and then adds the user Jerry to the Sales role.
 
+---
 
 1>  CREATE ROLE Sales
 
@@ -142,5 +143,55 @@ For example, the following statements create a database role named Sales, grants
 5>  ALTER ROLE Sales ADD MEMBER Jerry
 
 6>  GO
+
+---
+
+## 3. Configuring Row Level Security
+
+---
+
+Security](../relational-databases/security/row-level-security.md) enables you to restrict access to rows in a database based on the user executing a query. This feature is useful for scenarios like ensuring that customers can only access their own data or that workers can only access data that is pertinent to their department.  
+
+The following steps walk through setting up two Users with different row-level access to the `Sales.SalesOrderHeader` table. 
+
+We'll first create two user accounts to test the row level security:  
+
+---
+
+1>  USE AdventureWorks2014;   
+
+2>  GO
+
+---
+
+1>  CREATE USER Manager WITHOUT LOGIN;     
+
+2>  CREATE USER SalesPerson280 WITHOUT LOGIN
+
+3>  GO 
+
+---
+
+Next,grant read access on the `Sales.SalesOrderHeader` table to both users: 
+
+---
+
+1>  GRANT SELECT ON Sales.SalesOrderHeader TO Manager; 
+
+2>  GRANT SELECT ON Sales.SalesOrderHeader TO SalesPerson280; 
+
+3> GO 
+
+---
+
+Create a new schema and inline table-valued function. The function returns 1 when a row in the `SalesPersonID` column matches the ID of a `SalesPerson` login or if the user executing the query is the Manager user.
+
+--- 
+
+1> CREATE SCHEMA Security; 
+
+2> GO 
+
+---
 
 
