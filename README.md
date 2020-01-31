@@ -1,5 +1,7 @@
 A Set of Lab Exercises organized by Matt St. Onge, Jack Waterworth, & John Tietjen
 
+v1.0  1/31/2020
+
 # SQLonRHEL
 Workshop for SQL on RHEL 8.x systems
 Thanks in advance to Microsoft  for their excellent reference materials which made this possible
