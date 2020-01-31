@@ -31,4 +31,82 @@ Session Presentation Slides
 
 # LAB THREE EXERCISES
 
+---
+
+##1. Create a login and database user
+
+---
+
+Grant others access to SQL Server by creating a login in the master database using the CREATE LOGIN statement.
+
+
+sqlcmd -S localhost -U SA -P r3dh4t1!
+
+1> CREATE LOGIN student WITH PASSWORD = 'r3dh4t1!'; 
+
+2>  CREATE LOGIN Jerry WITH PASSWORD = 'r3dh4t1!'; 
+
+3>  GO
+
+---
+
+To connect to a user-database, a login needs a corresponding identity at the database level, called a database user. Users are specific to each database and must be separately created in each database to grant them access. 
+
+---
+
+
+1>  USE AdventureWorks2014; 
+
+2>  GO
+
+---
+
+1>  CREATE USER student; 
+
+2>  CREATE USER Jerry; 
+
+3>  GO
+
+1>  QUIT
+
+---
+
+You can authorize other logins to create more logins by granting them the ALTER ANY LOGIN permission. Inside a database, you can authorize other users to create more users by granting them the ALTER ANY USER permission.
+
+---
+
+
+sqlcmd -S localhost -U SA -P r3dh4t1!
+
+1> GRANT ALTER ANY LOGIN TO student;
+
+2>  GO
+
+---
+
+1>  USE AdventureWorks2014;  
+
+2>  GO
+
+---
+
+1>  GRANT ALTER ANY USER TO Jerry;
+
+2>  GO
+
+3>  QUIT
+
+
+---
+
+Now the login student can create more logins, and the user Jerry can create more users.
+
+---
+
+
+---
+
+## 2. Granting Access with Least Priveleges
+
+---
 
