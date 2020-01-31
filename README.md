@@ -1,5 +1,4 @@
-[![MattTheITGuru](https://avatars0.githubusercontent.com/u/22283700?s=100)](https://MattTheITGuru.com)
-A Set of Lab Exercises organized by Matt St. Onge & John Tietjen
+A Set of Lab Exercises organized by Matt St. Onge, Jack Waterworth, & John Tietjen
 
 # SQLonRHEL
 Workshop for SQL on RHEL 8.x systems
