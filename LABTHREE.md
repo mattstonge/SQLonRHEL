@@ -113,7 +113,7 @@ Now the login student can create more logins, and the user Jerry can create more
 The first people to connect to a user-database will be the administrator and database owner accounts. However these users have all the permissions available on the database. This is more permission than most users should have.
 When you are just getting started, you can assign some general categories of permissions by using the built-in fixed database roles. For example, the db_datareader fixed database role can read all tables in the database, but make no changes. Grant membership in a fixed database role by using the ALTER ROLE statement. The following example will add the user Jerry to the db_datareader fixed database role.
 
-
+---
 
 sqlcmd -S localhost -U SA -P r3dh4t1!
 
@@ -125,6 +125,7 @@ sqlcmd -S localhost -U SA -P r3dh4t1!
 
 2>  GO
 
+---
 
 Later, when you are ready to configure more precise access to your data (highly recommended), create your own user-defined database roles using CREATE ROLE statement. Then assign specific granular permissions to you custom roles.
 
@@ -193,5 +194,30 @@ Create a new schema and inline table-valued function. The function returns 1 whe
 2> GO 
 
 ---
+
+1>  CREATE FUNCTION Security.fn_securitypredicate(@SalesPersonID AS int)
+
+2>  RETURNS TABLE
+
+3>  WITH SCHEMABINDING AS
+
+4>  RETURN SELECT 1 AS fn_securitypredicate_result
+
+5>  WHERE ('SalesPerson' + CAST(@SalesPersonId as VARCHAR(16)) = USER_NAME())
+
+6>  OR (USER_NAME() = 'Manager');
+
+7>  GO
+
+
+---
+
+Let's now create a security policy adding the function as both a filter and a block predicate on the table:
+
+---
+
+
+
+
 
 
