@@ -217,6 +217,54 @@ Let's now create a security policy adding the function as both a filter and a bl
 ---
 
 
+1>  CREATE SECURITY POLICY SalesFilter 
+
+2>  ADD FILTER PREDICATE Security.fn_securitypredicate(SalesPersonID)
+
+3>  ON Sales.SalesOrderHeader, 
+
+4>  ADD BLOCK PREDICATE Security.fn_securitypredicate(SalesPersonID)
+
+5>  ON Sales.SalesOrderHeader
+
+6>  WITH (STATE = ON);
+
+7>  GO
+
+
+---
+
+Now, let's execute the following to query the `SalesOrderHeader` table as each user. Verify that `SalesPerson280` only sees the 95 rows from their own sales and that the `Manager` can see all the rows in the table.
+
+---
+
+1>  EXECUTE AS USER = 'Manager';
+
+2>  SELECT COUNT(*) FROM Sales.SalesOrderHeader;
+
+3>  REVERT;
+
+4>  GO
+
+---
+
+1>  EXECUTE AS USER = 'SalesPerson280';
+
+2>  SELECT COUNT(*) FROM Sales.SalesOrderHeader;
+
+3>  REVERT;
+
+4>  GO
+
+---
+
+
+
+
+
+
+
+
 
 
 
