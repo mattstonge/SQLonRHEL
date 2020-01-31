@@ -256,7 +256,36 @@ Now, let's execute the following to query the `SalesOrderHeader` table as each u
 
 4>  GO
 
+
 ---
+
+Alter the security policy to disable the policy.  Now both users can access all rows.
+
+---
+
+1>  ALTER SECURITY POLICY SalesFilter WITH (STATE = OFF);
+
+2>  GO
+
+---
+
+1>  EXECUTE AS USER = 'SalesPerson280';
+
+2>  SELECT COUNT(*) FROM Sales.SalesOrderHeader; 
+
+3>  REVERT;
+
+4>  GO
+
+
+---
+
+## Execise 3. Dynamic Data
+
+---
+
+#[Dynamic Data Masking](../relational-databases/security/dynamic-data-masking.md) enables you to limit the exposure of sensitive data to users of an application by fully or partially masking certain columns. 
+
 
 
 
